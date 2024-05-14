@@ -8,7 +8,7 @@ import (
 )
 
 func TestAVL(t *testing.T) {
-	myTree := New[string, string]()
+	myTree := New[int, string]()
 	var numbers []int
 	for i := 0; i < 200; i++ {
 		numbers = append(numbers, rand.Intn(100))
@@ -17,7 +17,7 @@ func TestAVL(t *testing.T) {
 	fmt.Printf("numbers: %v\n", numbers)
 	for _, v := range numbers {
 		value := fmt.Sprintf("%d", v)
-		myTree.Put(value, value)
+		myTree.Put(v, value)
 
 	}
 	printTree(myTree)
